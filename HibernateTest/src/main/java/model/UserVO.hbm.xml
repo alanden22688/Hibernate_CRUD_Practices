@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="model.UserVO" table="user">
+		<id type="int" column="id" name="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="password" column="password"></property>
+		<!-- name="(對應UserVO的setter getter)" -->
+		<!-- 例如name="test" 那UserVO就要有setTest()和getTest()方法 -->
+		<!-- HQL中的Select name from UserVO 其中的name也是對應setter getter -->
+		<!-- column="資料庫欄位名稱" -->
+	</class>
+</hibernate-mapping>
