@@ -23,6 +23,13 @@ public class UserVO {
 		super();
 	}
 	
+//	CriteriaQuery Demo multiselect()
+//	public UserVO(String name,String password) {
+//		super();
+//		this.name = name;
+//		this.password = password;
+//	}
+	
 	public UserVO(Integer id, String name, String password) {
 		super();
 		this.id = id;
