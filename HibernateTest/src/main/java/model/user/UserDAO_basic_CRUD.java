@@ -1,4 +1,4 @@
-package model;
+package model.user;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
