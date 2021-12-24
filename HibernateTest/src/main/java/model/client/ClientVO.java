@@ -9,19 +9,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import model.server.ServerVO;
 
 @Entity
-@Table(name="client")
+@Table(name = "client")
 public class ClientVO {
 	@Id
-	@Column(name="id",nullable = false)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="id",table = "server")
@@ -31,25 +32,31 @@ public class ClientVO {
 //	ManyToMany  任何一邊都可以是主導的一方，只能在其中一側設定owning side，另一側就設定 inverse side
 //	以上皆為個人理解
 //	==================================================================================
-	private Set<ServerVO> Server;
-	
+//	@JoinTable(name = "client_server") //預設name是兩個表用 _ 接在一起
+	private Set<ServerVO> server;
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public Set<ServerVO> getServer() {
-		return Server;
+		return server;
 	}
+
 	public void setServer(Set<ServerVO> server) {
-		Server = server;
+		this.server = server;
 	}
-	
+
 }

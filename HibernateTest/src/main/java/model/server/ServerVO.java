@@ -18,11 +18,11 @@ import model.client.ClientVO;
 public class ServerVO {
 	@Id
 	@Column(name = "id",nullable = false)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name="address")
 	private String address;
-	@ManyToMany(cascade = CascadeType.ALL,mappedBy = "client")
+	@ManyToMany(cascade = CascadeType.ALL,mappedBy = "server")
 //	==================================================================================
 //	@JoinColumn 通常是"主導(owning side)的一方"，通常定義在 ManyToOne 的一方，由自己來維護。
 //	mappedby    通常是"被主導(inverse side)的一方"，通常定義在 OneToMany 的一方，由對方進行維護。
