@@ -84,7 +84,13 @@ public class Server_Hibernate_DAO implements ServerDAO_interface {
 	public static void main(String[] args) {
 		ServerDAO_interface serverDAO = new Server_Hibernate_DAO();
 		ServerVO serverVO = new ServerVO();
-		serverVO.setAddress("新北市板橋區中山路1段66巷8樓");
+		serverVO.setAddress("新北市板橋區中山路1段87巷10樓");
+		ServerVO serverVO2 = new ServerVO();
+		serverVO2.setAddress("新北市板橋區中山路2段87巷20樓");
+		ServerVO serverVO3 = new ServerVO();
+		serverVO3.setAddress("新北市板橋區中山路1段228巷5樓");
 		serverDAO.insert(serverVO);
+		serverDAO.insert(serverVO2);
+		serverDAO.insert(serverVO3);
 	}
 }

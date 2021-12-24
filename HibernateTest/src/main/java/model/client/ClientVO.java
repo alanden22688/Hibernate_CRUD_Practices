@@ -32,7 +32,7 @@ public class ClientVO {
 //	ManyToMany  任何一邊都可以是主導的一方，只能在其中一側設定owning side，另一側就設定 inverse side
 //	以上皆為個人理解
 //	==================================================================================
-//	@JoinTable(name = "client_server") //預設name是兩個表用 _ 接在一起
+//	@JoinTable(name = "client_server") //預設name是用兩個表的名稱 加上 _ (底線)接在一起
 	private Set<ServerVO> server;
 
 	public Integer getId() {
