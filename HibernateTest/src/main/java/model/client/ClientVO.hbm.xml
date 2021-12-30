@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="model.client.ClientVO" table="client">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<!-- table要填的是連接表 -->
+		<set name="server" table="client_server" inverse="false">
+			<key column="client_id" not-null="true"></key>
+			<many-to-many class="model.server.ServerVO" column="server_id"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

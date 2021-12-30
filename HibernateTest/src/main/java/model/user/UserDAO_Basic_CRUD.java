@@ -5,7 +5,7 @@ import org.hibernate.Transaction;
 
 import hibernateUtil.HibernateUtil;
 
-public class UserDAO_basic_CRUD {
+public class UserDAO_Basic_CRUD {
 	//Hibernate的CRUD
 	public void insert(UserVO userVO) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -50,7 +50,7 @@ public class UserDAO_basic_CRUD {
 	
 	//測試區
 	public static void main(String[] args) {
-		UserDAO_basic_CRUD userDAO = new UserDAO_basic_CRUD();
+		UserDAO_Basic_CRUD userDAO = new UserDAO_Basic_CRUD();
 		UserVO userVO = new UserVO(); //new一個物件，進入Transient狀態
 //		userVO.setId(1);
 //		userVO.setName("terry");

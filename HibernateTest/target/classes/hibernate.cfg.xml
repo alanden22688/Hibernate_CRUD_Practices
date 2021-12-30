@@ -4,12 +4,21 @@
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+    	<!-- JDBC連線池設定 -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.password">123456</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/HibernateTest?ServerTimeZone=Asia/Taipei;</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!--是否要顯示實際操作資料庫時的SQL -->
         <property name="hibernate.show_sql">true</property>
+        
+        <!-- 交易管理類型 -->
+        <!-- 交易類型也可以設定為JTA -->
+        <!-- JTA好處是可以不用寫Transaction程式碼 -->
+        <!-- 壞處則是程式相依伺服器(JBoss Server之類的) -->
+        <property name="hibernate.transaction.coordinator_class">jdbc</property>
         
         <!--	使用getCurrentSession()時，需要設定  -->
         <property name="hibernate.current_session_context_class">thread</property>
@@ -17,8 +26,11 @@
 		<!--    有hibernate XML Mapping file(hbm.xml) -->
         <mapping resource="model/user/UserVO.hbm.xml"/>
         <mapping resource="model/user/Backup_UserVO.hbm.xml"/>
+<!--         <mapping resource="model/client/ClientVO.hbm.xml"/> -->
+<!--         <mapping resource="model/server/ServerVO.hbm.xml"/> -->
+        
 		<!--    使用Annotation則使用 -->
-    	<mapping class="model.client.ClientVO"/>
-    	<mapping class="model.server.ServerVO"/>
+<!--     	<mapping class="model.client.ClientVO"/> -->
+<!--     	<mapping class="model.server.ServerVO"/> -->
     </session-factory>
 </hibernate-configuration>

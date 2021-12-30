@@ -117,7 +117,7 @@ public class Client_Server_Hibernate_DAO implements Client_Server_interface{
 
 	public static void main(String[] args) {
 		Client_Server_interface client_Server_DAO = new Client_Server_Hibernate_DAO();
-//		client_Server_DAO.getAll();
+		client_Server_DAO.getAll();
 //		client_Server_DAO.findByClientId(2);
 //		client_Server_DAO.insert("alan", 1,2,3);
 //		client_Server_DAO.insert("vincent", 2,3);

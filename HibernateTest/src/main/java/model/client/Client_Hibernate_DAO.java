@@ -85,8 +85,9 @@ public class Client_Hibernate_DAO implements ClientDAO_interface {
 //	單獨操作Client表
 	public static void main(String[] args) {
 		ClientDAO_interface clientDAO = new Client_Hibernate_DAO();
-		ClientVO clientVO = new ClientVO();
-		clientVO.setName("alan");
-		clientDAO.insert(clientVO);
+//		ClientVO clientVO = new ClientVO();
+//		clientVO.setName("alan");
+//		clientDAO.insert(clientVO);
+//		clientDAO.getAll();
 	}
 }

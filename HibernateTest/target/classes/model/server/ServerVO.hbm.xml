@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="model.server.ServerVO" table="server">
+		<id type="int" name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		
+		<property name="address" column="address"></property>
+		<set name="client" table="client_server" inverse="true">
+			<key column="server_id" not-null="true"></key>
+			<many-to-many class="model.client.ClientVO" column="client_id"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
