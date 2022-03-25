@@ -25,7 +25,7 @@ public class ClientVO {
 	@Column(name = "name")
 	private String name;
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="id",table = "server")
+	@JoinColumn(name="id")
 //	==================================================================================
 //	@JoinColumn 通常是"主導(owning side)的一方"，通常定義在 ManyToOne 的一方，由自己來維護。
 //	mappedby    通常是"被主導(inverse side)的一方"，通常定義在 OneToMany 的一方，由對方進行維護。
